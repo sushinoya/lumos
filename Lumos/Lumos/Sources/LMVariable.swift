@@ -8,25 +8,25 @@
 
 import Foundation
 
-public struct LumosVariable {
+public struct LMVariable {
     let ivar: Ivar
     let name: String
     let offset: Int
     let typeEncoding: String
     
     init?(ivar: Ivar) {
-        guard let name = LumosVariable.getName(ivar: ivar),
-              let typeEncoding = LumosVariable.getTypeEncoding(ivar: ivar)
+        guard let name = LMVariable.getName(ivar: ivar),
+              let typeEncoding = LMVariable.getTypeEncoding(ivar: ivar)
         else { return nil }
         
         self.ivar = ivar
         self.name = name
-        self.offset = LumosVariable.getOffset(ivar: ivar)
+        self.offset = LMVariable.getOffset(ivar: ivar)
         self.typeEncoding = typeEncoding
     }
 }
 
-extension LumosVariable {
+extension LMVariable {
     
     static func getName(ivar: Ivar) -> String? {
         guard let namePointer = ivar_getName(ivar) else { return nil }

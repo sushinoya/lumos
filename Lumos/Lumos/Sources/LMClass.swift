@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LumosClass {
+class LMClass {
     
     // MARK: Tests
 
@@ -43,9 +43,6 @@ class LumosClass {
     }
     
     
-    // Depreciated: func class_setSuperclass(AnyClass, AnyClass) -> AnyClass
-    
-    
     // func class_getInstanceSize(AnyClass?) -> Int
     static func getInstanceSize(of _class: AnyClass) -> Int {
         return class_getInstanceSize(_class)
@@ -53,27 +50,46 @@ class LumosClass {
     
     
     // func class_getInstanceVariable(AnyClass?, UnsafePointer<Int8>) -> Ivar?
-    static func getInstanceVariable(from _class: AnyClass, withName name: String) -> LumosVariable? {
+    static func getInstanceVariable(from _class: AnyClass, withName name: String) -> LMVariable? {
         guard let ivar = class_getInstanceVariable(_class, name) else { return nil }
-        return LumosVariable(ivar: ivar)
+        return LMVariable(ivar: ivar)
     }
     
     
     // func class_getClassVariable(AnyClass?, UnsafePointer<Int8>) -> Ivar?
-    static func getClassVariable(from _class: AnyClass, withName name: String) -> LumosVariable? {
+    static func getClassVariable(from _class: AnyClass, withName name: String) -> LMVariable? {
         guard let ivar = class_getClassVariable(_class, name) else { return nil }
-        return LumosVariable(ivar: ivar)
+        return LMVariable(ivar: ivar)
     }
     
-    //    func class_copyIvarList(AnyClass?, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<Ivar>?
-
-    //    func class_getIvarLayout(AnyClass?) -> UnsafePointer<UInt8>?
-
-    //    func class_getWeakIvarLayout(AnyClass?) -> UnsafePointer<UInt8>?
-
-    //    func class_getProperty(AnyClass?, UnsafePointer<Int8>) -> objc_property_t?
     
-    //    func class_copyPropertyList(AnyClass?, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<objc_property_t>?
+    // func class_copyIvarList(AnyClass?, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<Ivar>?
+    static func getVariablesList(from _class: AnyClass) -> [LMVariable] {
+        return [LMVariable]()
+    }
+    
+    
+    // func class_getIvarLayout(AnyClass?) -> UnsafePointer<UInt8>?
+    static func getStrongVariablesLayout(for _class: AnyClass) -> String? {
+        guard let layout = class_getIvarLayout(_class) else { return nil }
+        return String(cString: layout)
+    }
+    
+    
+    // func class_getWeakIvarLayout(AnyClass?) -> UnsafePointer<UInt8>?
+    static func getWeakVariablesLayout(for _class: AnyClass) -> String? {
+        guard let layout = class_getWeakIvarLayout(_class) else { return nil }
+        return String(cString: layout)
+    }
+    
+    
+    // func class_getProperty(AnyClass?, UnsafePointer<Int8>) -> objc_property_t?
+    static func getProperty(for _class: AnyClass, propertyName: String) -> LMProperty? {
+        guard let propertyPointer = class_getProperty(_class, propertyName) else { return nil }
+        return LMProperty(propertyPointer: propertyPointer)
+    }
+    
+    // func class_copyPropertyList(AnyClass?, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<objc_property_t>?
     
     //    func class_getInstanceMethod(AnyClass?, Selector) -> Method?
 
@@ -89,6 +105,7 @@ class LumosClass {
     
     // MARK: Modifiers
     
+// Depreciated: func class_setSuperclass(AnyClass, AnyClass) -> AnyClass
 //    func class_addIvar(AnyClass?, UnsafePointer<Int8>, Int, UInt8, UnsafePointer<Int8>?) -> Bool
 //    func class_setIvarLayout(AnyClass?, UnsafePointer<UInt8>?)
 //    func class_setWeakIvarLayout(AnyClass?, UnsafePointer<UInt8>?)
