@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		8252ECEC20FCD21000483A3D /* RuntimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8252ECEB20FCD21000483A3D /* RuntimeHelper.swift */; };
+		8252ECF020FCE1C800483A3D /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8252ECEF20FCE1C800483A3D /* Util.swift */; };
+		8252ECF220FCE9AF00483A3D /* RuntimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8252ECEB20FCD21000483A3D /* RuntimeHelper.swift */; };
+		8252ED0220FCF3D000483A3D /* LumosClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8252ED0020FCF3D000483A3D /* LumosClass.swift */; };
+		8252ED0320FCF3D000483A3D /* LumosVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8252ED0120FCF3D000483A3D /* LumosVariable.swift */; };
 		82F178EF20FCD12000EB7353 /* Lumos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F178E520FCD12000EB7353 /* Lumos.framework */; };
 		82F178F420FCD12000EB7353 /* LumosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F178F320FCD12000EB7353 /* LumosTests.swift */; };
 		82F178F620FCD12000EB7353 /* Lumos.h in Headers */ = {isa = PBXBuildFile; fileRef = 82F178E820FCD12000EB7353 /* Lumos.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		8252ECEB20FCD21000483A3D /* RuntimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RuntimeHelper.swift; path = ../../../Lumos/Lumos/Lumos/RuntimeHelper.swift; sourceTree = "<group>"; };
+		8252ECEF20FCE1C800483A3D /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		8252ED0020FCF3D000483A3D /* LumosClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LumosClass.swift; path = ../../../../Lumos/Lumos/Lumos/Sources/LumosClass.swift; sourceTree = "<group>"; };
+		8252ED0120FCF3D000483A3D /* LumosVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LumosVariable.swift; path = ../../../../Lumos/Lumos/Lumos/Sources/LumosVariable.swift; sourceTree = "<group>"; };
 		82F178E520FCD12000EB7353 /* Lumos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lumos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F178E820FCD12000EB7353 /* Lumos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lumos.h; sourceTree = "<group>"; };
 		82F178E920FCD12000EB7353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8252ECFF20FCF3A700483A3D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8252ED0020FCF3D000483A3D /* LumosClass.swift */,
+				8252ED0120FCF3D000483A3D /* LumosVariable.swift */,
+			);
+			name = Sources;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		82F178DB20FCD12000EB7353 = {
 			isa = PBXGroup;
 			children = (
@@ -73,9 +90,11 @@
 		82F178E720FCD12000EB7353 /* Lumos */ = {
 			isa = PBXGroup;
 			children = (
+				8252ECFF20FCF3A700483A3D /* Sources */,
 				82F178E820FCD12000EB7353 /* Lumos.h */,
 				82F178E920FCD12000EB7353 /* Info.plist */,
 				8252ECEB20FCD21000483A3D /* RuntimeHelper.swift */,
+				8252ECEF20FCE1C800483A3D /* Util.swift */,
 			);
 			path = Lumos;
 			sourceTree = "<group>";
@@ -198,6 +217,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8252ED0320FCF3D000483A3D /* LumosVariable.swift in Sources */,
+				8252ECF020FCE1C800483A3D /* Util.swift in Sources */,
+				8252ED0220FCF3D000483A3D /* LumosClass.swift in Sources */,
 				8252ECEC20FCD21000483A3D /* RuntimeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82F178F420FCD12000EB7353 /* LumosTests.swift in Sources */,
+				8252ECF220FCE9AF00483A3D /* RuntimeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

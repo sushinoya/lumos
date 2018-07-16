@@ -22,8 +22,10 @@ class LumosTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        guard let ivar = LumosClass.getInstanceVariable(from: Testable.self, withName: "name") else { return }
+        print(ivar)
+        print(String(cString: ivar_getName(ivar)!))
+        XCTAssert(true)
     }
     
     func testPerformanceExample() {
@@ -33,4 +35,12 @@ class LumosTests: XCTestCase {
         }
     }
     
+}
+
+class Testable {
+    let name: String
+    
+    init() {
+        self.name = "Testable"
+    }
 }

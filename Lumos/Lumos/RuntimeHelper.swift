@@ -10,6 +10,8 @@ import Foundation
 
 public class RuntimeHelper {
     
+    public init() {}
+    
     static func swizzle(originalClass: AnyClass, originalSelector: Selector, swizzledClass: AnyClass, swizzledSelector: Selector) {
         guard let originalMethod = class_getInstanceMethod(originalClass, originalSelector),
             let swizzledMethod = class_getInstanceMethod(swizzledClass, swizzledSelector) else {
