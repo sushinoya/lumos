@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let _ = RuntimeHelper()
+        
+        let x = ViewController()
+        x.lumosClass.getInstanceVariable(withName: "sd")
         // Do any additional setup after loading the view, typically from a nib.
     }
 

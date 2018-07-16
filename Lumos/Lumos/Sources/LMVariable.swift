@@ -9,12 +9,12 @@
 import Foundation
 
 public struct LMVariable {
-    let ivar: Ivar
-    let name: String
-    let offset: Int
-    let typeEncoding: String
+    public let ivar: Ivar
+    public let name: String
+    public let offset: Int
+    public let typeEncoding: String
     
-    init?(ivar: Ivar) {
+    public init?(ivar: Ivar) {
         guard let name = LMVariable.getName(ivar: ivar),
               let typeEncoding = LMVariable.getTypeEncoding(ivar: ivar)
         else { return nil }
@@ -28,16 +28,16 @@ public struct LMVariable {
 
 extension LMVariable {
     
-    static func getName(ivar: Ivar) -> String? {
+    public static func getName(ivar: Ivar) -> String? {
         guard let namePointer = ivar_getName(ivar) else { return nil }
         return String(cString: namePointer)
     }
     
-    static func getOffset(ivar: Ivar) -> Int {
+    public static func getOffset(ivar: Ivar) -> Int {
         return ivar_getOffset(ivar)
     }
     
-    static func getTypeEncoding(ivar: Ivar) -> String? {
+    public static func getTypeEncoding(ivar: Ivar) -> String? {
         guard let typePointer = ivar_getTypeEncoding(ivar) else { return nil }
         return String(cString: typePointer)
     }
