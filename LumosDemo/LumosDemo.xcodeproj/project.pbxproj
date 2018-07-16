@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		82F1794120FCD16300EB7353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1794020FCD16300EB7353 /* AppDelegate.swift */; };
+		82F1794320FCD16300EB7353 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1794220FCD16300EB7353 /* ViewController.swift */; };
+		82F1794620FCD16300EB7353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F1794420FCD16300EB7353 /* Main.storyboard */; };
+		82F1794820FCD16400EB7353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F1794720FCD16400EB7353 /* Assets.xcassets */; };
+		82F1794B20FCD16400EB7353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F1794920FCD16400EB7353 /* LaunchScreen.storyboard */; };
+		82F1795620FCD16400EB7353 /* LumosDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1795520FCD16400EB7353 /* LumosDemoTests.swift */; };
+		82F1796120FCD18100EB7353 /* Lumos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F1796020FCD18100EB7353 /* Lumos.framework */; };
+		82F1796220FCD18100EB7353 /* Lumos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82F1796020FCD18100EB7353 /* Lumos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82F1795220FCD16400EB7353 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82F1793520FCD16300EB7353 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82F1793C20FCD16300EB7353;
+			remoteInfo = LumosDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82F1796320FCD18100EB7353 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				82F1796220FCD18100EB7353 /* Lumos.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		82F1793D20FCD16300EB7353 /* LumosDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LumosDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82F1794020FCD16300EB7353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		82F1794220FCD16300EB7353 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		82F1794520FCD16300EB7353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		82F1794720FCD16400EB7353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		82F1794A20FCD16400EB7353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		82F1794C20FCD16400EB7353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82F1795120FCD16400EB7353 /* LumosDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LumosDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		82F1795520FCD16400EB7353 /* LumosDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumosDemoTests.swift; sourceTree = "<group>"; };
+		82F1795720FCD16400EB7353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82F1796020FCD18100EB7353 /* Lumos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lumos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		82F1793A20FCD16300EB7353 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F1796120FCD18100EB7353 /* Lumos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F1794E20FCD16400EB7353 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		82F1793420FCD16300EB7353 = {
+			isa = PBXGroup;
+			children = (
+				82F1793F20FCD16300EB7353 /* LumosDemo */,
+				82F1795420FCD16400EB7353 /* LumosDemoTests */,
+				82F1796020FCD18100EB7353 /* Lumos.framework */,
+				82F1793E20FCD16300EB7353 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		82F1793E20FCD16300EB7353 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82F1793D20FCD16300EB7353 /* LumosDemo.app */,
+				82F1795120FCD16400EB7353 /* LumosDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82F1793F20FCD16300EB7353 /* LumosDemo */ = {
+			isa = PBXGroup;
+			children = (
+				82F1794020FCD16300EB7353 /* AppDelegate.swift */,
+				82F1794220FCD16300EB7353 /* ViewController.swift */,
+				82F1794420FCD16300EB7353 /* Main.storyboard */,
+				82F1794720FCD16400EB7353 /* Assets.xcassets */,
+				82F1794920FCD16400EB7353 /* LaunchScreen.storyboard */,
+				82F1794C20FCD16400EB7353 /* Info.plist */,
+			);
+			path = LumosDemo;
+			sourceTree = "<group>";
+		};
+		82F1795420FCD16400EB7353 /* LumosDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				82F1795520FCD16400EB7353 /* LumosDemoTests.swift */,
+				82F1795720FCD16400EB7353 /* Info.plist */,
+			);
+			path = LumosDemoTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		82F1793C20FCD16300EB7353 /* LumosDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82F1795A20FCD16400EB7353 /* Build configuration list for PBXNativeTarget "LumosDemo" */;
+			buildPhases = (
+				82F1793920FCD16300EB7353 /* Sources */,
+				82F1793A20FCD16300EB7353 /* Frameworks */,
+				82F1793B20FCD16300EB7353 /* Resources */,
+				82F1796320FCD18100EB7353 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LumosDemo;
+			productName = LumosDemo;
+			productReference = 82F1793D20FCD16300EB7353 /* LumosDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		82F1795020FCD16400EB7353 /* LumosDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82F1795D20FCD16400EB7353 /* Build configuration list for PBXNativeTarget "LumosDemoTests" */;
+			buildPhases = (
+				82F1794D20FCD16400EB7353 /* Sources */,
+				82F1794E20FCD16400EB7353 /* Frameworks */,
+				82F1794F20FCD16400EB7353 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82F1795320FCD16400EB7353 /* PBXTargetDependency */,
+			);
+			name = LumosDemoTests;
+			productName = LumosDemoTests;
+			productReference = 82F1795120FCD16400EB7353 /* LumosDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		82F1793520FCD16300EB7353 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = io.sushinoya;
+				TargetAttributes = {
+					82F1793C20FCD16300EB7353 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					82F1795020FCD16400EB7353 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 82F1793C20FCD16300EB7353;
+					};
+				};
+			};
+			buildConfigurationList = 82F1793820FCD16300EB7353 /* Build configuration list for PBXProject "LumosDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 82F1793420FCD16300EB7353;
+			productRefGroup = 82F1793E20FCD16300EB7353 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82F1793C20FCD16300EB7353 /* LumosDemo */,
+				82F1795020FCD16400EB7353 /* LumosDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82F1793B20FCD16300EB7353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F1794B20FCD16400EB7353 /* LaunchScreen.storyboard in Resources */,
+				82F1794820FCD16400EB7353 /* Assets.xcassets in Resources */,
+				82F1794620FCD16300EB7353 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F1794F20FCD16400EB7353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		82F1793920FCD16300EB7353 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F1794320FCD16300EB7353 /* ViewController.swift in Sources */,
+				82F1794120FCD16300EB7353 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F1794D20FCD16400EB7353 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82F1795620FCD16400EB7353 /* LumosDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82F1795320FCD16400EB7353 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82F1793C20FCD16300EB7353 /* LumosDemo */;
+			targetProxy = 82F1795220FCD16400EB7353 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		82F1794420FCD16300EB7353 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82F1794520FCD16300EB7353 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		82F1794920FCD16400EB7353 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82F1794A20FCD16400EB7353 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		82F1795820FCD16400EB7353 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		82F1795920FCD16400EB7353 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		82F1795B20FCD16400EB7353 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZAWMV278LY;
+				INFOPLIST_FILE = LumosDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.sushinoya.LumosDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		82F1795C20FCD16400EB7353 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZAWMV278LY;
+				INFOPLIST_FILE = LumosDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.sushinoya.LumosDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		82F1795E20FCD16400EB7353 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZAWMV278LY;
+				INFOPLIST_FILE = LumosDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.sushinoya.LumosDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LumosDemo.app/LumosDemo";
+			};
+			name = Debug;
+		};
+		82F1795F20FCD16400EB7353 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZAWMV278LY;
+				INFOPLIST_FILE = LumosDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.sushinoya.LumosDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LumosDemo.app/LumosDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		82F1793820FCD16300EB7353 /* Build configuration list for PBXProject "LumosDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82F1795820FCD16400EB7353 /* Debug */,
+				82F1795920FCD16400EB7353 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82F1795A20FCD16400EB7353 /* Build configuration list for PBXNativeTarget "LumosDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82F1795B20FCD16400EB7353 /* Debug */,
+				82F1795C20FCD16400EB7353 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82F1795D20FCD16400EB7353 /* Build configuration list for PBXNativeTarget "LumosDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82F1795E20FCD16400EB7353 /* Debug */,
+				82F1795F20FCD16400EB7353 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 82F1793520FCD16300EB7353 /* Project object */;
+}

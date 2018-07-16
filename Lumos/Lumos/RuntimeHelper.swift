@@ -1,6 +1,14 @@
+//
+//  RuntimeHelper.swift
+//  Lumos
+//
+//  Created by Suyash Shekhar on 16/7/18.
+//  Copyright © 2018 io.sushinoya. All rights reserved.
+//
+
 import Foundation
 
-class Lumos {
+public class RuntimeHelper {
     
     static func swizzle(originalClass: AnyClass, originalSelector: Selector, swizzledClass: AnyClass, swizzledSelector: Selector) {
         guard let originalMethod = class_getInstanceMethod(originalClass, originalSelector),

@@ -18,21 +18,21 @@ However, a lot of dirty work needs to be done before one gets the list out. Here
 
 ```swift
 static func classList() -> [AnyClass] {
-let expectedClassCount = objc_getClassList(nil, 0)
-let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
+    let expectedClassCount = objc_getClassList(nil, 0)
+    let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
 
-let autoreleasingAllClasses = AutoreleasingUnsafeMutablePointer<AnyClass>(allClasses)
-let actualClassCount: Int32 = objc_getClassList(autoreleasingAllClasses, expectedClassCount)
+    let autoreleasingAllClasses = AutoreleasingUnsafeMutablePointer<AnyClass>(allClasses)
+    let actualClassCount: Int32 = objc_getClassList(autoreleasingAllClasses, expectedClassCount)
 
-var classes = [AnyClass]()
-for i in 0 ..< actualClassCount {
-if let currentClass: AnyClass = allClasses[Int(i)] {
-classes.append(currentClass)
-}
-}
+    var classes = [AnyClass]()
+    for i in 0 ..< actualClassCount {
+        if let currentClass: AnyClass = allClasses[Int(i)] {
+            classes.append(currentClass)
+        }
+    }
 
-allClasses.deallocate()
-return classes
+    allClasses.deallocate()
+    return classes
 }
 ```
 
@@ -40,7 +40,7 @@ Now all you would need to do to obtain the list of classes would be to invoke th
 
 ```swift
 static func classesImplementingProtocol(_ requiredProtocol: Protocol) -> [AnyClass] {
-return classList().filter { class_conformsToProtocol($0, requiredProtocol) }
+    return classList().filter { class_conformsToProtocol($0, requiredProtocol) }
 }
 ```
 
@@ -49,18 +49,18 @@ Perhaps you wish to swizzle method implementations at runtime:
 
 ```swift
 static func swizzle(originalClass: AnyClass, originalSelector: Selector, swizzledClass: AnyClass, swizzledSelector: Selector) {
-guard let originalMethod = class_getInstanceMethod(originalClass, originalSelector),
-let swizzledMethod = class_getInstanceMethod(swizzledClass, swizzledSelector) else {
-return
-}
+    guard let originalMethod = class_getInstanceMethod(originalClass, originalSelector),
+    let swizzledMethod = class_getInstanceMethod(swizzledClass, swizzledSelector) else {
+        return
+    }
 
-let didAddMethod = class_addMethod(originalClass, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
+    let didAddMethod = class_addMethod(originalClass, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
 
-if didAddMethod {
-class_replaceMethod(originalClass, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
-} else {
-method_exchangeImplementations(originalMethod, swizzledMethod);
-}
+    if didAddMethod {
+        class_replaceMethod(originalClass, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
 }
 ```
 
