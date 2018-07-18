@@ -1,8 +1,19 @@
-# lumos
+# **lumos**
+A *light* wrapper around Objective-C Runtime.
+
+## Usage
+Just incantate `.lumos` on any instance of a `NSObject` subclass or use `LMClass(object: AnyObject)` or `LMClass(class _class: AnyClass)` for classes which do not subclass `NSObject`
+
+<img width="759" alt="screen shot 2018-07-19 at 12 44 49 am" src="https://user-images.githubusercontent.com/23443586/42896777-879fa7da-8af0-11e8-9c8d-f35d0e2130b7.png">
+
+
+
+<img width="440" alt="screen shot 2018-07-19 at 12 47 27 am" src="https://user-images.githubusercontent.com/23443586/42896778-87e73c6c-8af0-11e8-88e0-27f3c15474ef.png">
+
 
 ## What exactly is ***lumos***?
 
-I hope *lumos* to be a light wrapper around objective-c runtime functions to allow an easier access to the runtime. It can also serve as a reference for many of these methods and their usages. Either way, I have many more these functions to explore and I will keep updating *lumos* along the way.
+*lumos* as mentioned is a *light* wrapper around objective-c runtime functions to allow an easier access to the runtime. However, its sourcecode can also serve as a reference for many of these methods and their usages. The project is still in its infancy and more features and functionality will be added in the upcoming months.
 
 
 ## Why ***lumos***?
@@ -65,3 +76,16 @@ static func swizzle(originalClass: AnyClass, originalSelector: Selector, swizzle
 ```
 
 P.S you might want to use `dispatch_once` with the method above to above swizzling more than once across multiple threads.
+
+## Installation
+
+### Manual
+
+- In your project directory, 
+`git clone www.github.com/sushinoya/lumos.git`
+
+- In your project settings, include `Lumos.framework`
+
+### Others 
+
+Keep a look out for **Cocoapod** and **Carthage** releases.
