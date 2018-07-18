@@ -7,8 +7,17 @@
 //
 
 import Foundation
-class Util {
-    static func string(for pointer: UnsafePointer<Int8>) -> String {
-        return String(cString: pointer)
+
+public extension String {
+    func toPointer(completion: @escaping (UnsafePointer<Int8>) -> ()) {
+        self.withCString { (pointer) -> () in
+            completion(pointer)
+        }
+    }
+    
+    // Source: https://github.com/apple/swift/blob/master/stdlib/public/core/Pointer.swift#L85-L92
+    public func toPointer() -> UnsafePointer<Int8> {
+        let utf8 = Array(self.utf8CString)
+        return _convertConstArrayToPointerArgument(utf8).1
     }
 }
