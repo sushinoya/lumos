@@ -9,5 +9,5 @@
 import Foundation
 
 public extension NSObject {
-    public var lumosClass: LMClass { return LMClass(object: self) }
+    public var lumos: LMClass { return LMClass(object: self) }
 }

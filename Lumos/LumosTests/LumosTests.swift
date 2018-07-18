@@ -22,9 +22,9 @@ class LumosTests: XCTestCase {
     }
     
     func testExample() {
-        guard let ivar = LumosClass.getInstanceVariable(from: Testable.self, withName: "name") else { return }
-        print(ivar)
-        print(String(cString: ivar_getName(ivar)!))
+        let test = Testable()
+        guard let variable = test.lumos.getInstanceVariable(withName: "name") else { return }
+        print(variable)
         XCTAssert(true)
     }
     
@@ -37,10 +37,10 @@ class LumosTests: XCTestCase {
     
 }
 
-class Testable {
+class Testable: NSObject {
     let name: String
     
-    init() {
+    override init() {
         self.name = "Testable"
     }
 }
