@@ -29,11 +29,19 @@ public class LMClass {
     
     
     //  func class_respondsToSelector(AnyClass?, Selector) -> Bool
+    public func respondsToSelector(selector: Selector) -> Bool {
+        return class_respondsToSelector(self.classType, selector)
+    }
+    
+    public func respondsToSelector(selectorString: String) -> Bool {
+        let selector = Selector(selectorString)
+        return respondsToSelector(selector: selector)
+    }
     
     
     //  func class_conformsToProtocol(AnyClass?, Protocol?) -> Bool
-    public func conformsToProtocol(_ _protocol: Protocol) -> Bool {
-        return class_conformsToProtocol(self.classType, _protocol)
+    public func conformsToProtocol(_ proto: Protocol) -> Bool {
+        return class_conformsToProtocol(self.classType, proto)
     }
     
     
@@ -89,6 +97,7 @@ public class LMClass {
         }
         
         count.deallocate()
+        ivarList.deallocate()
         return variables
     }
     
@@ -108,17 +117,13 @@ public class LMClass {
     
     
     // func class_getProperty(AnyClass?, UnsafePointer<Int8>) -> objc_property_t?
-    public func getProperty(withName propertyName: String, completion: @escaping (LMProperty) -> ()) {
-        propertyName.withCString { pointer -> () in
-            guard let propertyPointer = class_getProperty(self.classType, pointer) else { return }
-            let property = LMProperty(propertyPointer: propertyPointer)
-            completion(property)
-        }
-    }
-    
-    
     public func getProperty(withName propertyName: String) -> LMProperty? {
-        return self.getProperties().filter { $0.name == propertyName }.first
+        let pointer = propertyName.toPointer()
+        guard let propertyPointer = class_getProperty(self.classType, pointer) else { return nil }
+        let property = LMProperty(propertyPointer: propertyPointer)
+        
+        pointer.deallocate()
+        return property
     }
     
     
@@ -133,13 +138,13 @@ public class LMClass {
             properties.append(LMProperty(propertyPointer: property))
         }
         
-        propertyList.deallocate()
         count.deallocate()
+        propertyList.deallocate()
         return properties
     }
     
-    //    public func class_copyProtocolList(AnyClass?, UnsafeMutablePointer<UInt32>?) ->
-    //    AutoreleasingUnsafeMutablePointer<Protocol>?
+    // func class_copyProtocolList(AnyClass?, UnsafeMutablePointer<UInt32>?) ->
+    // AutoreleasingUnsafeMutablePointer<Protocol>?
     public func getProtocols() -> [LMProtocol] {
         var protocols = [LMProtocol]()
         let count = UnsafeMutablePointer<UInt32>.allocate(capacity: 0)
@@ -156,28 +161,74 @@ public class LMClass {
         return protocols
     }
     
-    //    public func class_getInstanceMethod(AnyClass?, Selector) -> Method?
     
-    //    public func class_getClassMethod(AnyClass?, Selector) -> Method?
+    // func class_getInstanceMethod(AnyClass?, Selector) -> Method?
+    public func getInstanceMethod(selector: Selector) -> LMMethod? {
+        guard let method = class_getInstanceMethod(self.classType, selector) else { return nil }
+        return LMMethod(method: method)
+    }
     
-    //    public func class_copyMethodList(AnyClass?, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<Method>?
+    public func getInstanceMethod(selectorString: String) -> LMMethod? {
+        let selector = Selector(selectorString)
+        return getInstanceMethod(selector: selector)
+    }
     
-    //    public func class_getMethodImplementation(AnyClass?, Selector) -> IMP?
+
+    //  func class_getClassMethod(AnyClass?, Selector) -> Method?
+    public func getClassMethod(selector: Selector) -> LMMethod? {
+        guard let method = class_getClassMethod(self.classType, selector) else { return nil }
+        return LMMethod(method: method)
+    }
     
-    //    public func class_getMethodImplementation_stret(AnyClass?, Selector) -> IMP?
+    public func getClassMethod(selectorString: String) -> LMMethod? {
+        let selector = Selector(selectorString)
+        return getClassMethod(selector: selector)
+    }
+    
+    //  func class_copyMethodList(AnyClass?, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<Method>?
+    public func getMethods() -> [LMMethod] {
+        var methods = [LMMethod]()
+        let count = UnsafeMutablePointer<UInt32>.allocate(capacity: 0)
+        guard let methodList = class_copyMethodList(self.classType, count) else { return methods }
+        
+        for methodCount in 0..<count.pointee {
+            let method = methodList[Int(methodCount)]
+            methods.append(LMMethod(method: method))
+        }
+        
+        count.deallocate()
+        methodList.deallocate()
+        return methods
+    }
+    
+    
+    //  func class_getMethodImplementation(AnyClass?, Selector) -> IMP?
+    public func getImplementation(selector: Selector) -> IMP? {
+        return class_getMethodImplementation(self.classType, selector)
+    }
+    
     
     // MARK: Modifiers
     
     // Depreciated: func class_setSuperclass(AnyClass, AnyClass) -> AnyClass
-    //    public func class_addIvar(AnyClass?, UnsafePointer<Int8>, Int, UInt8, UnsafePointer<Int8>?) -> Bool
-    //    public func class_setIvarLayout(AnyClass?, UnsafePointer<UInt8>?)
-    //    public func class_setWeakIvarLayout(AnyClass?, UnsafePointer<UInt8>?)
-    //    public func class_addMethod(AnyClass?, Selector, IMP, UnsafePointer<Int8>?) -> Bool
-    //    public func class_replaceMethod(AnyClass?, Selector, IMP, UnsafePointer<Int8>?) -> IMP?
-    //    public func class_addProtocol(AnyClass?, Protocol) -> Bool
-    //    public func class_addProperty(AnyClass?, UnsafePointer<Int8>, UnsafePointer<objc_property_attribute_t>?, UInt32) -> Bool
-    //    public func class_replaceProperty(AnyClass?, UnsafePointer<Int8>, UnsafePointer<objc_property_attribute_t>?, UInt32)
-    //    public func class_getVersion(AnyClass?) -> Int32
-    //    public func class_setVersion(AnyClass?, Int32)
-    //    Sets the version number of a class definition.
+    
+    // func class_addIvar(AnyClass?, UnsafePointer<Int8>, Int, UInt8, UnsafePointer<Int8>?) -> Bool
+    
+    // func class_setIvarLayout(AnyClass?, UnsafePointer<UInt8>?)
+    
+    // func class_setWeakIvarLayout(AnyClass?, UnsafePointer<UInt8>?)
+    
+    // func class_addMethod(AnyClass?, Selector, IMP, UnsafePointer<Int8>?) -> Bool
+    
+    // func class_replaceMethod(AnyClass?, Selector, IMP, UnsafePointer<Int8>?) -> IMP?
+    
+    // func class_addProtocol(AnyClass?, Protocol) -> Bool
+    
+    // func class_addProperty(AnyClass?, UnsafePointer<Int8>, UnsafePointer<objc_property_attribute_t>?, UInt32) -> Bool
+    
+    // func class_replaceProperty(AnyClass?, UnsafePointer<Int8>, UnsafePointer<objc_property_attribute_t>?, UInt32)
+    
+    // func class_getVersion(AnyClass?) -> Int32
+    
+    // func class_setVersion(AnyClass?, Int32)
 }
