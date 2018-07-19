@@ -17,22 +17,23 @@ class ViewController: UIViewController {
         
         let x = URLSession()
         
-        x.lumos.getProperty(withName: "trial") { property in
+        if let property = x.lumos.getProperty(withName: "trial") {
             let attributes = property.attributes()
             for x in (attributes) {
                 print("Key: \(x.name), Value: \(x.value)")
             }
         }
-        
+
         for variable in x.lumos.getVariables() {
             print(variable.name)
-        }r
+        }
         
         for property in x.lumos.getProperties() {
             print(property.attributes())
         }
         
-        
+        let y = TrialClass()
+        print(y.lumos.getInstanceMethod(selector: #selector(TrialClass.hi)))
         
         
         for proto in x.lumos.getProtocols() {
@@ -50,6 +51,10 @@ class TrialClass: NSObject, Fake, Fake2, Fake5 {
     override init() {
         self.trial = UIView()
         self.y = "Trial"
+    }
+    
+    @objc func hi(s: String) -> Int8 {
+        return 9
     }
 }
 

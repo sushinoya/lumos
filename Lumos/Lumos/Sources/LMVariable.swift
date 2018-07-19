@@ -28,16 +28,16 @@ public struct LMVariable {
 
 extension LMVariable {
     
-    public static func getName(ivar: Ivar) -> String? {
+    private static func getName(ivar: Ivar) -> String? {
         guard let namePointer = ivar_getName(ivar) else { return nil }
         return String(cString: namePointer)
     }
     
-    public static func getOffset(ivar: Ivar) -> Int {
+    private static func getOffset(ivar: Ivar) -> Int {
         return ivar_getOffset(ivar)
     }
     
-    public static func getTypeEncoding(ivar: Ivar) -> String? {
+    private static func getTypeEncoding(ivar: Ivar) -> String? {
         guard let typePointer = ivar_getTypeEncoding(ivar) else { return nil }
         return String(cString: typePointer)
     }

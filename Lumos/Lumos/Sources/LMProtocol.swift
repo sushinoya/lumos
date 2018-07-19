@@ -30,18 +30,31 @@ public struct LMProtocol {
         }
     }
     
+    
     // func objc_copyProtocolList(UnsafeMutablePointer<UInt32>?) -> AutoreleasingUnsafeMutablePointer<Protocol>?
+    
     // func objc_allocateProtocol(UnsafePointer<Int8>) -> Protocol?
+    
     // func objc_registerProtocol(Protocol)
+    
     // func protocol_addMethodDescription(Protocol, Selector, UnsafePointer<Int8>?, Bool, Bool)
+    
     // func protocol_addProtocol(Protocol, Protocol)
+    
     // func protocol_addProperty(Protocol, UnsafePointer<Int8>, UnsafePointer<objc_property_attribute_t>?, UInt32, Bool, Bool)
+    
     // func protocol_isEqual(Protocol?, Protocol?) -> Bool
+    
     // func protocol_copyMethodDescriptionList(Protocol, Bool, Bool, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<objc_method_description>?
+    
     // func protocol_getMethodDescription(Protocol, Selector, Bool, Bool) -> objc_method_description
+    
     // func protocol_copyPropertyList(Protocol, UnsafeMutablePointer<UInt32>?) -> UnsafeMutablePointer<objc_property_t>?
+    
     // func protocol_getProperty(Protocol, UnsafePointer<Int8>, Bool, Bool) -> objc_property_t?
+    
     // func protocol_copyProtocolList(Protocol, UnsafeMutablePointer<UInt32>?) -> AutoreleasingUnsafeMutablePointer<Protocol>?
+    
     // func protocol_conformsToProtocol(Protocol?, Protocol?) -> Bool
 
 }
