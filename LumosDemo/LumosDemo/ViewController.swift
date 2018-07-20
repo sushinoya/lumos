@@ -11,74 +11,23 @@ import Lumos
 
 class ViewController: UIViewController {
     
-    @objc dynamic func iJustCantLook() -> String {
-        print("iJustCantLook")
-        let x = true
-        if x {
-            print("holy jesus")
-            return "hakuna"
-        } else {
-            return "Matata"
-        }
-        
-        return "TrialClass()"
-    }
-    
-    @objc dynamic func iJustCasntLook() -> Void {
-        print("iJustCanstLook")
-//        return "hakuna"
-
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let trialObject = TrialClass()
-        trialObject.function()
-        
-        let method = Lumos.for(ViewController.self).getInstanceMethod(selector: #selector(ViewController.iJustCantLook))!
-        
-        
-        method.replace { print("spiderman") }
-        
-        print(self.iJustCantLook())
-        
-        trialObject.function()
-        
-        let methods = LMClass(class: TrialClass.self).getMethods()
-        
-        for method in methods {
-            print(method.name)
-        }
-        
-
-        let x = URLSession()
-        
-        print(x.lumos.getClassHierarchy())
-
-        if let property = x.lumos.getProperties().first {
-            let attributes = property.attributes()
+        for cls in Lumos.getAllClasses() {
+            let lumoscls = Lumos.for(cls)
+            guard let name =  lumoscls.getName() else { continue }
+            guard name.contains("Lumos")  else { continue }
             
-            for x in (attributes) {
-                
-                
-                print("Key: \(x.name), Value: \(x.value ?? "nil")")
+            print("")
+            print(name)
+            
+            for prop in lumoscls.getVariables() {
+                print(prop.name)
             }
-        }
-
-        for variable in x.lumos.getVariables() {
-            print(variable.name)
-        }
-
-        for property in x.lumos.getProperties() {
-            print(property.attributes())
-        }
-
-        let y = TrialClass()
-        print(y.lumos.getInstanceMethod(selector: #selector(TrialClass.hi)))
-
-
-        for proto in x.lumos.getProtocols() {
-            print(proto)
+            
+            for mehod in lumoscls.getMethods() {
+                print(mehod.name)
+            }
         }
     }
 }
@@ -116,10 +65,4 @@ class TrialClass: NSObject {
         m1.swapImplementation(with: m2)
     }
 }
-
-@objc protocol Fake {}
-@objc protocol Fake1 {}
-@objc protocol Fake2 {}
-@objc protocol Fake3 {}
-@objc protocol Fake4 {}
 

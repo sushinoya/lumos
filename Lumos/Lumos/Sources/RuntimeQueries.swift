@@ -8,7 +8,7 @@
 import Foundation
 
 extension Lumos {
-    static func getAllClasses() -> [AnyClass] {
+    public static func getAllClasses() -> [AnyClass] {
         let expectedClassCount = objc_getClassList(nil, 0)
         let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
         

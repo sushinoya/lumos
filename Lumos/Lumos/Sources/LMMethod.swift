@@ -71,7 +71,7 @@ extension LMMethod {
     
     private func hook(option: AspectOptions, errorMessage: String, block: @escaping () -> Void) {
         guard Lumos.for(self.class).getClassHierarchy().last == NSObject.self else {
-            print(LMMethod.errorMessage(.notNSObjectSubclass))            
+            print(LMMethod.errorMessage(.notNSObjectSubclass))
             return
         }
         
