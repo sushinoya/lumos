@@ -165,7 +165,7 @@ public class LMClass {
     // func class_getInstanceMethod(AnyClass?, Selector) -> Method?
     public func getInstanceMethod(selector: Selector) -> LMMethod? {
         guard let method = class_getInstanceMethod(self.classType, selector) else { return nil }
-        return LMMethod(method: method)
+        return LMMethod(method: method, class: self.classType)
     }
     
     public func getInstanceMethod(selectorString: String) -> LMMethod? {
@@ -177,7 +177,7 @@ public class LMClass {
     //  func class_getClassMethod(AnyClass?, Selector) -> Method?
     public func getClassMethod(selector: Selector) -> LMMethod? {
         guard let method = class_getClassMethod(self.classType, selector) else { return nil }
-        return LMMethod(method: method)
+        return LMMethod(method: method, class: self.classType)
     }
     
     public func getClassMethod(selectorString: String) -> LMMethod? {
@@ -193,7 +193,7 @@ public class LMClass {
         
         for methodCount in 0..<count.pointee {
             let method = methodList[Int(methodCount)]
-            methods.append(LMMethod(method: method))
+            methods.append(LMMethod(method: method, class: self.classType))
         }
         
         count.deallocate()
@@ -205,6 +205,19 @@ public class LMClass {
     //  func class_getMethodImplementation(AnyClass?, Selector) -> IMP?
     public func getImplementation(selector: Selector) -> IMP? {
         return class_getMethodImplementation(self.classType, selector)
+    }
+    
+    
+    public func getClassHierarchy() -> [AnyClass] {
+        var hierarcy = [AnyClass]()
+        hierarcy.append(self.classType)
+        var currentSuper: AnyClass? = class_getSuperclass(self.classType)
+        while currentSuper != nil {
+            hierarcy.append(currentSuper!)
+            currentSuper = class_getSuperclass(currentSuper)
+        }
+        
+        return hierarcy
     }
     
     
