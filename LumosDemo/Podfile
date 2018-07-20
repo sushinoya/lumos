@@ -6,5 +6,6 @@ target 'LumosDemo' do
   use_frameworks!
 
   # Pods for LumosDemo
+  source 'https://github.com/CocoaPods/Specs.git'
   pod 'Lumos', :path => '../'
 end
