@@ -11,44 +11,85 @@ import Lumos
 
 class ViewController: UIViewController {
     
+    @objc dynamic func iJustCantLook() -> String {
+        print("iJustCantLook")
+        let x = true
+        if x {
+            print("holy jesus")
+            return "hakuna"
+        } else {
+            return "Matata"
+        }
+        
+        return "TrialClass()"
+    }
+    
+    @objc dynamic func iJustCasntLook() -> Void {
+        print("iJustCanstLook")
+//        return "hakuna"
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let _ = RuntimeHelper()
+        let trialObject = TrialClass()
+        trialObject.function()
         
+        let method = Lumos.for(ViewController.self).getInstanceMethod(selector: #selector(ViewController.iJustCantLook))!
+        
+        
+        method.replace { print("spiderman") }
+        
+        print(self.iJustCantLook())
+        
+        trialObject.function()
+        
+        let methods = LMClass(class: TrialClass.self).getMethods()
+        
+        for method in methods {
+            print(method.name)
+        }
+        
+
         let x = URLSession()
         
-        if let property = x.lumos.getProperty(withName: "trial") {
+        print(x.lumos.getClassHierarchy())
+
+        if let property = x.lumos.getProperties().first {
             let attributes = property.attributes()
+            
             for x in (attributes) {
-                print("Key: \(x.name), Value: \(x.value)")
+                
+                
+                print("Key: \(x.name), Value: \(x.value ?? "nil")")
             }
         }
 
         for variable in x.lumos.getVariables() {
             print(variable.name)
         }
-        
+
         for property in x.lumos.getProperties() {
             print(property.attributes())
         }
-        
+
         let y = TrialClass()
         print(y.lumos.getInstanceMethod(selector: #selector(TrialClass.hi)))
-        
-        
+
+
         for proto in x.lumos.getProtocols() {
             print(proto)
         }
     }
 }
 
-class TrialClass: NSObject, Fake, Fake2, Fake5 {
+class TrialClass: NSObject {
     @objc private weak var trial: UIView?
     @objc let y: String
-    static var z: Int = 5
-    static let a: Int = 5
+    @objc static var z: Int = 5
+    @objc static let a: Int = 5
 
-    override init() {
+     override init() {
         self.trial = UIView()
         self.y = "Trial"
     }
@@ -56,12 +97,29 @@ class TrialClass: NSObject, Fake, Fake2, Fake5 {
     @objc func hi(s: String) -> Int8 {
         return 9
     }
+    
+    @objc dynamic func function() {
+        print("original function")
+    }
+    
+    @objc class func fakeFunc() {
+        print("code injected")
+    }
+    
+    static func swizzle() {
+        let lumos = Lumos.for(TrialClass.self)
+        guard let m1 = lumos.getInstanceMethod(selector: #selector(TrialClass.function)),
+              let m2 = lumos.getInstanceMethod(selector: #selector(TrialClass.fakeFunc)) else {
+                print("could not get methods"); return
+        }
+        
+        m1.swapImplementation(with: m2)
+    }
 }
 
 @objc protocol Fake {}
 @objc protocol Fake1 {}
 @objc protocol Fake2 {}
 @objc protocol Fake3 {}
-protocol Fake4 {}
-@objc protocol Fake5 {}
+@objc protocol Fake4 {}
 
