@@ -1,0 +1,16 @@
+PODS:
+  - Lumos (0.0.1)
+
+DEPENDENCIES:
+  - Lumos (from `../`)
+
+EXTERNAL SOURCES:
+  Lumos:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Lumos: 4bc6918ecf8cf169f8c3f97a63a16afe6f761dec
+
+PODFILE CHECKSUM: 4c95fea210d78c3a438d3330744516d18b1c32e1
+
+COCOAPODS: 1.5.3

@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Lumos/Lumos.xcodeproj">
+      location = "group:LumosDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:LumosDemo/LumosDemo.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

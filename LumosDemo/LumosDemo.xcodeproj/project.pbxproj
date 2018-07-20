@@ -7,125 +7,93 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		82F1794120FCD16300EB7353 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1794020FCD16300EB7353 /* AppDelegate.swift */; };
-		82F1794320FCD16300EB7353 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1794220FCD16300EB7353 /* ViewController.swift */; };
-		82F1794620FCD16300EB7353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F1794420FCD16300EB7353 /* Main.storyboard */; };
-		82F1794820FCD16400EB7353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82F1794720FCD16400EB7353 /* Assets.xcassets */; };
-		82F1794B20FCD16400EB7353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82F1794920FCD16400EB7353 /* LaunchScreen.storyboard */; };
-		82F1795620FCD16400EB7353 /* LumosDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F1795520FCD16400EB7353 /* LumosDemoTests.swift */; };
-		82F1796120FCD18100EB7353 /* Lumos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F1796020FCD18100EB7353 /* Lumos.framework */; };
-		82F1796220FCD18100EB7353 /* Lumos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82F1796020FCD18100EB7353 /* Lumos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1625C3D3D887DDC15F3DD29D /* Pods_LumosDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B849C70795C2B32F297D5C /* Pods_LumosDemo.framework */; };
+		4325EF892101901C00071A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325EF882101901C00071A37 /* AppDelegate.swift */; };
+		4325EF8B2101901C00071A37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325EF8A2101901C00071A37 /* ViewController.swift */; };
+		4325EF902101902400071A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4325EF8F2101902400071A37 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		82F1795220FCD16400EB7353 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 82F1793520FCD16300EB7353 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 82F1793C20FCD16300EB7353;
-			remoteInfo = LumosDemo;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		82F1796320FCD18100EB7353 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				82F1796220FCD18100EB7353 /* Lumos.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		82F1793D20FCD16300EB7353 /* LumosDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LumosDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		82F1794020FCD16300EB7353 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82F1794220FCD16300EB7353 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		82F1794520FCD16300EB7353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		82F1794720FCD16400EB7353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		82F1794A20FCD16400EB7353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		82F1794C20FCD16400EB7353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		82F1795120FCD16400EB7353 /* LumosDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LumosDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		82F1795520FCD16400EB7353 /* LumosDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumosDemoTests.swift; sourceTree = "<group>"; };
-		82F1795720FCD16400EB7353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		82F1796020FCD18100EB7353 /* Lumos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lumos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B849C70795C2B32F297D5C /* Pods_LumosDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LumosDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4325EF852101901C00071A37 /* LumosDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LumosDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4325EF882101901C00071A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4325EF8A2101901C00071A37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4325EF8F2101902400071A37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4325EF942101902400071A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAB640CCED2BADDCAEB80AEE /* Pods-LumosDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LumosDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LumosDemo/Pods-LumosDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E086A555758D4A980041FD71 /* Pods-LumosDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LumosDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LumosDemo/Pods-LumosDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		82F1793A20FCD16300EB7353 /* Frameworks */ = {
+		4325EF822101901C00071A37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F1796120FCD18100EB7353 /* Lumos.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82F1794E20FCD16400EB7353 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				1625C3D3D887DDC15F3DD29D /* Pods_LumosDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		82F1793420FCD16300EB7353 = {
+		329F7ED52943ADD762AEBB65 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82F1793F20FCD16300EB7353 /* LumosDemo */,
-				82F1795420FCD16400EB7353 /* LumosDemoTests */,
-				82F1796020FCD18100EB7353 /* Lumos.framework */,
-				82F1793E20FCD16300EB7353 /* Products */,
+				21B849C70795C2B32F297D5C /* Pods_LumosDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4325EF7C2101901C00071A37 = {
+			isa = PBXGroup;
+			children = (
+				4325EF872101901C00071A37 /* LumosDemo */,
+				4325EF862101901C00071A37 /* Products */,
+				68F073B53257189BD4E3D37B /* Pods */,
+				329F7ED52943ADD762AEBB65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		82F1793E20FCD16300EB7353 /* Products */ = {
+		4325EF862101901C00071A37 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82F1793D20FCD16300EB7353 /* LumosDemo.app */,
-				82F1795120FCD16400EB7353 /* LumosDemoTests.xctest */,
+				4325EF852101901C00071A37 /* LumosDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		82F1793F20FCD16300EB7353 /* LumosDemo */ = {
+		4325EF872101901C00071A37 /* LumosDemo */ = {
 			isa = PBXGroup;
 			children = (
-				82F1794020FCD16300EB7353 /* AppDelegate.swift */,
-				82F1794220FCD16300EB7353 /* ViewController.swift */,
-				82F1794420FCD16300EB7353 /* Main.storyboard */,
-				82F1794720FCD16400EB7353 /* Assets.xcassets */,
-				82F1794920FCD16400EB7353 /* LaunchScreen.storyboard */,
-				82F1794C20FCD16400EB7353 /* Info.plist */,
+				4325EF882101901C00071A37 /* AppDelegate.swift */,
+				4325EF8A2101901C00071A37 /* ViewController.swift */,
+				4325EF8F2101902400071A37 /* Assets.xcassets */,
+				4325EF942101902400071A37 /* Info.plist */,
 			);
 			path = LumosDemo;
 			sourceTree = "<group>";
 		};
-		82F1795420FCD16400EB7353 /* LumosDemoTests */ = {
+		68F073B53257189BD4E3D37B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				82F1795520FCD16400EB7353 /* LumosDemoTests.swift */,
-				82F1795720FCD16400EB7353 /* Info.plist */,
+				DAB640CCED2BADDCAEB80AEE /* Pods-LumosDemo.debug.xcconfig */,
+				E086A555758D4A980041FD71 /* Pods-LumosDemo.release.xcconfig */,
 			);
-			path = LumosDemoTests;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		82F1793C20FCD16300EB7353 /* LumosDemo */ = {
+		4325EF842101901C00071A37 /* LumosDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 82F1795A20FCD16400EB7353 /* Build configuration list for PBXNativeTarget "LumosDemo" */;
+			buildConfigurationList = 4325EF972101902400071A37 /* Build configuration list for PBXNativeTarget "LumosDemo" */;
 			buildPhases = (
-				82F1793920FCD16300EB7353 /* Sources */,
-				82F1793A20FCD16300EB7353 /* Frameworks */,
-				82F1793B20FCD16300EB7353 /* Resources */,
-				82F1796320FCD18100EB7353 /* Embed Frameworks */,
+				102120E5ADB4ED7D8FE47CEB /* [CP] Check Pods Manifest.lock */,
+				4325EF812101901C00071A37 /* Sources */,
+				4325EF822101901C00071A37 /* Frameworks */,
+				4325EF832101901C00071A37 /* Resources */,
+				D0F9BBABE3FE7C34422A94A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,47 +101,25 @@
 			);
 			name = LumosDemo;
 			productName = LumosDemo;
-			productReference = 82F1793D20FCD16300EB7353 /* LumosDemo.app */;
+			productReference = 4325EF852101901C00071A37 /* LumosDemo.app */;
 			productType = "com.apple.product-type.application";
-		};
-		82F1795020FCD16400EB7353 /* LumosDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 82F1795D20FCD16400EB7353 /* Build configuration list for PBXNativeTarget "LumosDemoTests" */;
-			buildPhases = (
-				82F1794D20FCD16400EB7353 /* Sources */,
-				82F1794E20FCD16400EB7353 /* Frameworks */,
-				82F1794F20FCD16400EB7353 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				82F1795320FCD16400EB7353 /* PBXTargetDependency */,
-			);
-			name = LumosDemoTests;
-			productName = LumosDemoTests;
-			productReference = 82F1795120FCD16400EB7353 /* LumosDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		82F1793520FCD16300EB7353 /* Project object */ = {
+		4325EF7D2101901C00071A37 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = io.sushinoya;
+				ORGANIZATIONNAME = "Sea Group";
 				TargetAttributes = {
-					82F1793C20FCD16300EB7353 = {
-						CreatedOnToolsVersion = 9.4;
-					};
-					82F1795020FCD16400EB7353 = {
-						CreatedOnToolsVersion = 9.4;
-						TestTargetID = 82F1793C20FCD16300EB7353;
+					4325EF842101901C00071A37 = {
+						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 82F1793820FCD16300EB7353 /* Build configuration list for PBXProject "LumosDemo" */;
+			buildConfigurationList = 4325EF802101901C00071A37 /* Build configuration list for PBXProject "LumosDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -181,86 +127,80 @@
 				en,
 				Base,
 			);
-			mainGroup = 82F1793420FCD16300EB7353;
-			productRefGroup = 82F1793E20FCD16300EB7353 /* Products */;
+			mainGroup = 4325EF7C2101901C00071A37;
+			productRefGroup = 4325EF862101901C00071A37 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				82F1793C20FCD16300EB7353 /* LumosDemo */,
-				82F1795020FCD16400EB7353 /* LumosDemoTests */,
+				4325EF842101901C00071A37 /* LumosDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		82F1793B20FCD16300EB7353 /* Resources */ = {
+		4325EF832101901C00071A37 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F1794B20FCD16400EB7353 /* LaunchScreen.storyboard in Resources */,
-				82F1794820FCD16400EB7353 /* Assets.xcassets in Resources */,
-				82F1794620FCD16300EB7353 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82F1794F20FCD16400EB7353 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				4325EF902101902400071A37 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXSourcesBuildPhase section */
-		82F1793920FCD16300EB7353 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXShellScriptBuildPhase section */
+		102120E5ADB4ED7D8FE47CEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F1794320FCD16300EB7353 /* ViewController.swift in Sources */,
-				82F1794120FCD16300EB7353 /* AppDelegate.swift in Sources */,
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LumosDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
-		82F1794D20FCD16400EB7353 /* Sources */ = {
+		D0F9BBABE3FE7C34422A94A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LumosDemo/Pods-LumosDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Lumos/Lumos.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lumos.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LumosDemo/Pods-LumosDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4325EF812101901C00071A37 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F1795620FCD16400EB7353 /* LumosDemoTests.swift in Sources */,
+				4325EF8B2101901C00071A37 /* ViewController.swift in Sources */,
+				4325EF892101901C00071A37 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		82F1795320FCD16400EB7353 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 82F1793C20FCD16300EB7353 /* LumosDemo */;
-			targetProxy = 82F1795220FCD16400EB7353 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		82F1794420FCD16300EB7353 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				82F1794520FCD16300EB7353 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		82F1794920FCD16400EB7353 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				82F1794A20FCD16400EB7353 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		82F1795820FCD16400EB7353 /* Debug */ = {
+		4325EF952101902400071A37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -320,7 +260,7 @@
 			};
 			name = Debug;
 		};
-		82F1795920FCD16400EB7353 /* Release */ = {
+		4325EF962101902400071A37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -374,115 +314,66 @@
 			};
 			name = Release;
 		};
-		82F1795B20FCD16400EB7353 /* Debug */ = {
+		4325EF982101902400071A37 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAB640CCED2BADDCAEB80AEE /* Pods-LumosDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAWMV278LY;
+				DEVELOPMENT_TEAM = TT2N7PPCM7;
 				INFOPLIST_FILE = LumosDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.sushinoya.LumosDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = seagroup.LumosDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		82F1795C20FCD16400EB7353 /* Release */ = {
+		4325EF992101902400071A37 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E086A555758D4A980041FD71 /* Pods-LumosDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAWMV278LY;
+				DEVELOPMENT_TEAM = TT2N7PPCM7;
 				INFOPLIST_FILE = LumosDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.sushinoya.LumosDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = seagroup.LumosDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		82F1795E20FCD16400EB7353 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAWMV278LY;
-				INFOPLIST_FILE = LumosDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.sushinoya.LumosDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LumosDemo.app/LumosDemo";
-			};
-			name = Debug;
-		};
-		82F1795F20FCD16400EB7353 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZAWMV278LY;
-				INFOPLIST_FILE = LumosDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.sushinoya.LumosDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LumosDemo.app/LumosDemo";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		82F1793820FCD16300EB7353 /* Build configuration list for PBXProject "LumosDemo" */ = {
+		4325EF802101901C00071A37 /* Build configuration list for PBXProject "LumosDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				82F1795820FCD16400EB7353 /* Debug */,
-				82F1795920FCD16400EB7353 /* Release */,
+				4325EF952101902400071A37 /* Debug */,
+				4325EF962101902400071A37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82F1795A20FCD16400EB7353 /* Build configuration list for PBXNativeTarget "LumosDemo" */ = {
+		4325EF972101902400071A37 /* Build configuration list for PBXNativeTarget "LumosDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				82F1795B20FCD16400EB7353 /* Debug */,
-				82F1795C20FCD16400EB7353 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		82F1795D20FCD16400EB7353 /* Build configuration list for PBXNativeTarget "LumosDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				82F1795E20FCD16400EB7353 /* Debug */,
-				82F1795F20FCD16400EB7353 /* Release */,
+				4325EF982101902400071A37 /* Debug */,
+				4325EF992101902400071A37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 82F1793520FCD16300EB7353 /* Project object */;
+	rootObject = 4325EF7D2101901C00071A37 /* Project object */;
 }
