@@ -1,24 +1,74 @@
 # **lumos**
 A *light* wrapper around Objective-C Runtime.
 
-## Usage
-Just incantate `.lumos` on any instance of a `NSObject` subclass or use `LMClass(object: AnyObject)` or `LMClass(class _class: AnyClass)` for classes which do not subclass `NSObject`
-
-<img width="759" alt="screen shot 2018-07-19 at 12 44 49 am" src="https://user-images.githubusercontent.com/23443586/42896777-879fa7da-8af0-11e8-9c8d-f35d0e2130b7.png">
-
-
-
-<img width="440" alt="screen shot 2018-07-19 at 12 47 27 am" src="https://user-images.githubusercontent.com/23443586/42896778-87e73c6c-8af0-11e8-88e0-27f3c15474ef.png">
-
 
 ## What exactly is ***lumos***?
 
-*lumos* as mentioned is a *light* wrapper around objective-c runtime functions to allow an easier access to the runtime. However, its sourcecode can also serve as a reference for many of these methods and their usages. The project is still in its infancy and more features and functionality will be added in the upcoming months.
+*lumos* as mentioned is a *light* wrapper around objective-c runtime functions to allow an easier access to the runtime. It makes operations such as swizzling and hooking very simple in Swift.
 
+For example, say you wish to run a block of code whenever a `ViewController`'s `viewDidLoad` method is called
+
+With *lumos*, you can do the following:
+
+```swift
+// In AppDelegate (or any conveinient place)..
+
+let method = Lumos.for(ViewController.self).getInstanceMethod(selector: #selector(ViewController.viewDidLoad))
+        
+method?.prepend {
+    // This block will be run every time a viewDidLoad is called
+    print("View Controller loaded")
+}
+````
+
+Similarily you can `append` a block to a method which will be called right before the method returns. You can even use `replace` to replace the method's implementation with the block you pass in as a parameter.
+
+If you wanted more flexibility, you could swizzle the `viewDidLoad` method using the following lines:
+
+```swift
+@objc func myMethod() {
+    // Do anything here
+}
+
+let myMethod = self.lumos.getInstanceMethod(selector: #selector(myMethod))
+
+method?.swapImplementation(with: myMethod)
+```
+
+Do you feel the superpower yet? Maybe you wish to list all the classes registered at runtime:
+
+```swift
+Lumos.getAllClasses()
+```
+
+*Fun Fact:* There are almost *12,000* classes registered at runtime Try `Lumos.getAllClasses().count`
+
+
+
+You could get the class hierarchy of any class just with:
+
+```swift
+myObject.lumos.getClassHierarcy()   // For UIView: [UIView, UIResponder, NSObject]
+```
+*Fun Fact:* Some classes such as `URLSessionTask` are actually dummy classes which are replaced with underlying classes such as `__NSCFLocalSessionTask` during runtime.
+
+With *lumos*, you can iterate through variables, functions, protocols etc and meddle with them at runtime. Have fun exploring!
+
+## Usage
+Just incantate `.lumos` on any instance of a `NSObject` subclass or use `Lumos(object)` for where `object` is of type `AnyClass`, `AnyObject`, `Protocol`, `Ivar`, `objc_property_t` or `objc_property_attribute_t`.
+
+<img width="728" alt="screen shot 2018-07-21 at 2 45 10 am" src="https://user-images.githubusercontent.com/23443586/43019596-2127777a-8c90-11e8-9735-389171e59ff3.png">
+
+<img width="728" alt="screen shot 2018-07-21 at 2 59 58 am" src="https://user-images.githubusercontent.com/23443586/43020763-b02b3314-8c93-11e8-852c-79e6365e556c.png">
+
+
+
+P.s The code itself *is* the documentation for now. There are many more methods that *lumos* offers which are not discussed in this document. Cheers :)
 
 ## Why ***lumos***?
 
 The [Objective-C Runtime](https://developer.apple.com/documentation/objectivec/objective_c_runtime) provides many powerful methods to manipulate objects, classes and methods at runtime. Although disasterous when misused, these methods provide a great way to peek into the runtime and meddle with it.
+
 
 However, the methods are not exactly easy to use sometimes. For example the following method is used to obtain a list of all classes registered at runtime: 
 ```swift
@@ -79,13 +129,33 @@ P.S you might want to use `dispatch_once` with the method above to above swizzli
 
 ## Installation
 
-### Manual
+### CocoaPods
 
-- In your project directory, 
-`git clone www.github.com/sushinoya/lumos.git`
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
 
-- In your project settings, include `Lumos.framework`
+```bash
+$ gem install cocoapods
+```
 
-### Others 
+To integrate *lumos* into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
-Keep a look out for **Cocoapod** and **Carthage** releases.
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'Lumos'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+## License
+
+Lumos is released under the Apache-2.0. See [LICENSE](https://github.com/sushinoya/Lumos/blob/master/LICENSE) for details.
+
