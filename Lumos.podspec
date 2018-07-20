@@ -4,10 +4,10 @@ Pod::Spec.new do |s|
 
   s.name         = "Lumos"
   s.version      = "0.0.1"
-  s.summary      = "A light wrapper around objective-c runtime"
-  s.description  = "A light wrapper around objective-c runtime."
+  s.summary      = "A light Swift wrapper around objective-c runtime"
+  s.description  = "A light Swift wrapper around objective-c runtime."
 
-  s.homepage     = "https://www..github.com/sushinoya/Lumos"
+  s.homepage     = "https://www.github.com/sushinoya/Lumos"
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -31,15 +31,13 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://www..github.com/sushinoya/Lumos.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://www.github.com/sushinoya/Lumos.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   s.swift_version = "4.1.2"
   s.source_files  = "Lumos/Lumos/**/*.{h,m,swift}"
-  s.resources = "Lumos/Lumos/**/*.xcdatamodeld"
-
   # s.exclude_files = "Classes/Exclude"
 
   s.public_header_files =
