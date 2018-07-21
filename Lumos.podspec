@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
   s.name         = "Lumos"
-  s.version      = "0.0.1"
+  s.version      = "0.1.0"
   s.summary      = "A light Swift wrapper around objective-c runtime"
   s.description  = "A light Swift wrapper around objective-c runtime."
 
