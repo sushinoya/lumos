@@ -11,7 +11,7 @@ import Foundation
 public class Lumos {
     public static func `for`(_ cls: AnyClass) -> LMClass { return LMClass(class: cls) }
     public static func `for`(_ obj: AnyObject) -> LMClass { return LMClass(class: type(of: obj)) }
-    public static func `for`(_ proto: Protocol) -> LMProtocol { return LMProtocol(proto: proto) }
+    public static func `for`(_ protocol: Protocol) -> LMProtocol { return LMProtocol(protocol: `protocol`) }
     public static func `for`(_ ivar: Ivar) -> LMVariable? { return LMVariable(ivar: ivar) }
     
     public static func `for`(_ propertyAttribute: objc_property_attribute_t) -> LMPropertyAttribute {

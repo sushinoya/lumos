@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lumos
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,14 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        TrialClass.swizzle()
+        let method = Lumos.for(ViewController.self).getInstanceMethod(selector: #selector(ViewController.viewDidLoad))
+        
+        method?.prepend {
+            // This block will be run every time a viewDidLoad is called
+            print("View Controller loaded")
+        }
 
         let rootViewController = ViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         
+        
+        let x = UIView()
+        print(x.lumos.getClassHierarchy())
+        
         return true
+    }
+    
+    @objc func myMethod() {
+        // Do anything here
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
