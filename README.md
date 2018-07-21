@@ -1,5 +1,7 @@
-# **lumos**
+  <img width="300" alt="LMMethod Methods" src="https://user-images.githubusercontent.com/23443586/43039911-d3c7a22c-8d69-11e8-92d7-381bc08ed578.gif">
+
 A *light* wrapper around Objective-C Runtime.
+# 
 
 
 ## What exactly is ***lumos***?
@@ -55,11 +57,11 @@ myObject.lumos.getClassHierarcy()   // For UIView: [UIView, UIResponder, NSObjec
 With *lumos*, you can iterate through variables, functions, protocols etc and meddle with them at runtime. Have fun exploring!
 
 ## Usage
-Just incantate `.lumos` on any instance of a `NSObject` subclass or use `Lumos(object)` for where `object` is of type `AnyClass`, `AnyObject`, `Protocol`, `Ivar`, `objc_property_t` or `objc_property_attribute_t`.
+Just incantate `.lumos` on any instance of a `NSObject` subclass or use `Lumos.for(object)` for where `object` is of type `AnyClass`, `AnyObject`, `Protocol`, `Ivar`, `objc_property_t` or `objc_property_attribute_t`.
 
-<img width="728" alt="screen shot 2018-07-21 at 2 45 10 am" src="https://user-images.githubusercontent.com/23443586/43019596-2127777a-8c90-11e8-9735-389171e59ff3.png">
+<img width="728" alt="LMMethod Methods" src="https://user-images.githubusercontent.com/23443586/43019596-2127777a-8c90-11e8-9735-389171e59ff3.png">
 
-<img width="728" alt="screen shot 2018-07-21 at 2 59 58 am" src="https://user-images.githubusercontent.com/23443586/43020763-b02b3314-8c93-11e8-852c-79e6365e556c.png">
+<img width="728" alt="LMClass Methods" src="https://user-images.githubusercontent.com/23443586/43020763-b02b3314-8c93-11e8-852c-79e6365e556c.png">
 
 
 
@@ -75,10 +77,10 @@ However, the methods are not exactly easy to use sometimes. For example the foll
 func objc_getClassList(_ buffer: AutoreleasingUnsafeMutablePointer<AnyClass>?, _ bufferCount: Int32) -> Int32
 ```
 
-However, a lot of dirty work needs to be done before one gets the list out. Here is how I would do it:
+Often, a lot of dirty work needs to be done before one gets the list out. Here is how I would do it:
 
 ```swift
-static func classList() -> [AnyClass] {
+static func getClassList() -> [AnyClass] {
     let expectedClassCount = objc_getClassList(nil, 0)
     let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
 
@@ -101,7 +103,7 @@ Now all you would need to do to obtain the list of classes would be to invoke th
 
 ```swift
 static func classesImplementingProtocol(_ requiredProtocol: Protocol) -> [AnyClass] {
-    return classList().filter { class_conformsToProtocol($0, requiredProtocol) }
+    return Lumos.getClassList().filter { class_conformsToProtocol($0, requiredProtocol) }
 }
 ```
 
@@ -123,6 +125,14 @@ static func swizzle(originalClass: AnyClass, originalSelector: Selector, swizzle
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
+```
+
+You can now use:
+```swift
+Lumos.swizzle(originalClass: URLSessionTask,
+              originalSelector: #selector(URLSessionTask.resume),
+              swizzledClass: SwizzledSessionTask,
+              swizzledSelector: #selector(SwizzledSessionTask.resume))
 ```
 
 P.S you might want to use `dispatch_once` with the method above to above swizzling more than once across multiple threads.
