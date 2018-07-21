@@ -1,5 +1,5 @@
 //
-//  LMClassTests.swift
+//  LMClassUIViewTests.swift
 //  LumosTests
 //
 //  Created by Suyash Shekhar on 21/7/18.
@@ -10,54 +10,58 @@ import XCTest
 @testable import Lumos
 
 
-class LMClassTests: XCTestCase {
+class LMClassUIViewTests: XCTestCase {
     
     static let classType = UIView.self
     static let lumos = Lumos.for(classType)
     static let selector = #selector(UIView.addSubview(_:))
     static let selectorString = "alpha"
+    let tester = LMClassUIViewTests.self
 
     func testIsMetaClass() {
-        let actual = LMClassTests.lumos.isMetaClass()
+        let actual = tester.lumos.isMetaClass()
         let expected = false
         XCTAssert(actual == expected)
     }
     
+    
     func testRespondsToSelector() {
-        let actual = LMClassTests.lumos.respondsToSelector(selector: LMClassTests.selector)
+        let actual = tester.lumos.respondsToSelector(selector: tester.selector)
         let expected = true
         XCTAssert(actual == expected)
     }
+    
     
     func testRespondsToSelectorString() {
-        let actual = LMClassTests.lumos.respondsToSelector(selectorString: LMClassTests.selectorString)
+        let actual = tester.lumos.respondsToSelector(selectorString: tester.selectorString)
         let expected = true
         XCTAssert(actual == expected)
     }
     
+    
     func testConformsToProtocol() {
-        let actual = LMClassTests.lumos.conformsToProtocol(CALayerDelegate.self)
+        let actual = tester.lumos.conformsToProtocol(CALayerDelegate.self)
         let expected = true
         XCTAssert(actual == expected)
     }
     
     
     func testGetName() {
-        let actual = LMClassTests.lumos.getName()
+        let actual = tester.lumos.getName()
         let expected = "UIView"
         XCTAssert(actual?.contains(expected) ?? false)
     }
     
     
     func testGetSuperclass() {
-        let actual = Lumos.for(LMClassTests.lumos.getSuperclass()!).getName()
+        let actual = Lumos.for(tester.lumos.getSuperclass()!).getName()
         let expected = "UIResponder"
         XCTAssert(actual?.contains(expected) ?? false)
     }
     
     
     func testGetInstanceSize() {
-        let actual = LMClassTests.lumos.getInstanceSize()
+        let actual = tester.lumos.getInstanceSize()
         let expected = 488
         XCTAssert(actual == expected)
     }
@@ -74,71 +78,71 @@ class LMClassTests: XCTestCase {
     
     
     func testGetVariables() {
-        let actual = LMClassTests.lumos.getVariables().count
+        let actual = tester.lumos.getVariables().count
         let expected = 49
         XCTAssert(actual == expected)
     }
     
     
     func testGetProperty() {
-        let actual = LMClassTests.lumos.getProperty(withName: "someName")
-        XCTAssert(true)
+        let actual = tester.lumos.getProperty(withName: "debugDescription")
+        XCTAssert(actual != nil)
     }
     
     
     func testGetProperties() {
-        let actual = LMClassTests.lumos.getProperties().count
+        let actual = tester.lumos.getProperties().count
         let expected = 201
         XCTAssert(actual == expected)
     }
     
     
     func testGetProtocols() {
-        let actual = LMClassTests.lumos.getProtocols().count
+        let actual = tester.lumos.getProtocols().count
         let expected = 29
         XCTAssert(actual == expected)
     }
     
     
     func testGetInstanceMethod() {
-        guard let actual = LMClassTests.lumos.getInstanceMethod(selector: LMClassTests.selector)?.name else { XCTFail(); return }
+        guard let actual = tester.lumos.getInstanceMethod(selector: tester.selector)?.name else { XCTFail(); return }
         let expected = "addSubview:"
         XCTAssert(actual == expected)
     }
     
     func testGetInstanceMethodWithSelector() {
-        let actual = LMClassTests.lumos.getInstanceMethod(selector: LMClassTests.selector)
-        XCTAssert(true)
+        let actual = tester.lumos.getInstanceMethod(selector: tester.selector)
+        XCTAssert(actual != nil)
     }
     
     
     func testGetClassMethodFromString() {
-        let actual = LMClassTests.lumos.getClassMethod(selectorString: LMClassTests.selectorString)?.name
+        let actual = tester.lumos.getClassMethod(selectorString: tester.selectorString)?.name
         let expected: String? = nil
         XCTAssert(actual == expected)
     }
     
     func testGetClassMethod() {
-        let actual = LMClassTests.lumos.getClassMethod(selector: LMClassTests.selector)
-        XCTAssert(true)
+        let actual = tester.lumos.getClassMethod(selector: #selector(UIView.setAnimationsEnabled(_:)))
+        XCTAssert(actual != nil)
     }
     
     func testGetMethods() {
-        let actual = LMClassTests.lumos.getMethods().count
+        let actual = tester.lumos.getMethods().count
         let expected = 1266
         XCTAssert(actual == expected)
     }
     
     
     func testGetImplementation() {
-        let actual = LMClassTests.lumos.getImplementation(selector: LMClassTests.selector)
+        let actual = tester.lumos.getImplementation(selector: tester.selector)
         let actualType = type(of: actual)
         XCTAssert(actualType == OpaquePointer?.self)
     }
     
     
     func testGetClassHierarchy() {
-        let actual = LMClassTests.lumos.getClassHierarchy().description
+        let actual = tester.lumos.getClassHierarchy().description
         let expected = "[UIView, UIResponder, NSObject]"
         XCTAssert(actual == expected)
     }
