@@ -9,6 +9,9 @@
 import Foundation
 
 public class Lumos {
+    public static var swizzles = [SwizzleEntry]()
+    
+    
     public static func `for`(_ cls: AnyClass) -> LMClass { return LMClass(class: cls) }
     public static func `for`(_ obj: AnyObject) -> LMClass { return LMClass(class: type(of: obj)) }
     public static func `for`(_ protocol: Protocol) -> LMProtocol { return LMProtocol(protocol: `protocol`) }
@@ -30,5 +33,4 @@ public extension NSObject {
 public extension objc_property_attribute_t {
     public var lumos: LMPropertyAttribute { return LMPropertyAttribute(rawStruct: self) }
 }
-
 

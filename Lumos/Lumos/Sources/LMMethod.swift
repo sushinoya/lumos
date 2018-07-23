@@ -13,6 +13,7 @@ public struct LMMethod {
     
     public let name: String
     public let `class`: AnyClass
+    public let type: MethodType
     public let methodPointer: Method
     public let selector: Selector
     public let implementation: IMP
@@ -38,13 +39,31 @@ public struct LMMethod {
         } else {
             self.encoding = nil
         }
+        
+        let respondsToInstanceMethod = class_getInstanceMethod(self.class, selector) == method
+        let respondsToClassMethod = class_getClassMethod(self.class, selector) == method
+
+        assert(respondsToInstanceMethod || respondsToClassMethod)
+        
+        if respondsToInstanceMethod {
+            self.type = .instance
+        } else {
+            self.type = .class
+        }
+        
     }
+}
+
+public enum MethodType {
+    case instance
+    case `class`
 }
 
 // MARK: Swizzling and Aspect Methods
 extension LMMethod {
     public func swapImplementation(with method: Method) {
         method_exchangeImplementations(self.methodPointer, method)
+        
     }
     
     public func swapImplementation(with lmMethod: LMMethod) {

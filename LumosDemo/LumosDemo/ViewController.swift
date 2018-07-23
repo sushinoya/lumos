@@ -11,6 +11,10 @@ import Lumos
 
 class ViewController: UIViewController {
     
+    @objc class dynamic func fakeFunc() {
+        print("code injected")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         for cls in Lumos.getAllClasses() {
@@ -29,6 +33,36 @@ class ViewController: UIViewController {
                 print(mehod.name)
             }
         }
+        
+        let method1 = self.lumos.getClassMethod(selector: #selector(ViewController.fakeFunc))
+        let method2 = Lumos.for(TrialClass.self).getInstanceMethod(selector: #selector(TrialClass.function))!
+
+        method1?.swapImplementation(with: method2)
+        
+        let trial = TrialClass()
+        trial.function()
+        
+//        Lumos.swizzle(type: .instance,
+//                      originalClass: TrialClass.self,
+//                      originalSelector: #selector(TrialClass.function),
+//                      swizzledClass: ViewController.self,
+//                      swizzledSelector: #selector(ViewController.fakeFunc))
+//
+//        let trial = TrialClass()
+//        trial.function()
+//        print(Lumos.swizzles)
+//
+//
+//        Lumos.swizzle(type: .instance,
+//                      originalClass: ViewController.self,
+//                      originalSelector: #selector(ViewController.fakeFunc),
+//                      swizzledClass: TrialClass.self,
+//                      swizzledSelector: #selector(TrialClass.function))
+//
+//        let trial2 = TrialClass()
+//        trial2.function()
+//        print(Lumos.swizzles)
+
     }
 }
 
@@ -49,20 +83,6 @@ class TrialClass: NSObject {
     
     @objc dynamic func function() {
         print("original function")
-    }
-    
-    @objc class func fakeFunc() {
-        print("code injected")
-    }
-    
-    static func swizzle() {
-        let lumos = Lumos.for(TrialClass.self)
-        guard let m1 = lumos.getInstanceMethod(selector: #selector(TrialClass.function)),
-              let m2 = lumos.getInstanceMethod(selector: #selector(TrialClass.fakeFunc)) else {
-                print("could not get methods"); return
-        }
-        
-        m1.swapImplementation(with: m2)
     }
 }
 

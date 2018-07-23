@@ -1,19 +1,23 @@
 PODS:
   - Aspects (1.4.1)
-  - Lumos (0.0.1):
+  - Lumos (0.1.0):
     - Aspects
 
 DEPENDENCIES:
   - Lumos (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Aspects
+
 EXTERNAL SOURCES:
   Lumos:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  Lumos: 44ed96accee7a6a09124084c1b88890f0fff1467
+  Lumos: 86bd5711a75c803cc859d06cc634e63be418de9b
 
 PODFILE CHECKSUM: c1b221b3902fac544440fe0c15916680e107018a
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
