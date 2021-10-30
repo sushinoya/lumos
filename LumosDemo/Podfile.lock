@@ -7,7 +7,7 @@ DEPENDENCIES:
   - Lumos (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Aspects
 
 EXTERNAL SOURCES:
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
-  Lumos: 86bd5711a75c803cc859d06cc634e63be418de9b
+  Lumos: cee67d81572589c654715ac27c2fab2d82f0539b
 
 PODFILE CHECKSUM: c1b221b3902fac544440fe0c15916680e107018a
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.11.2

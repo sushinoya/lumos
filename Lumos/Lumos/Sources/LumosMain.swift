@@ -27,10 +27,10 @@ public class Lumos {
 }
 
 public extension NSObject {
-    public var lumos: LMClass { return LMClass(object: self) }
+    var lumos: LMClass { return LMClass(object: self) }
 }
 
 public extension objc_property_attribute_t {
-    public var lumos: LMPropertyAttribute { return LMPropertyAttribute(rawStruct: self) }
+    var lumos: LMPropertyAttribute { return LMPropertyAttribute(rawStruct: self) }
 }
 
