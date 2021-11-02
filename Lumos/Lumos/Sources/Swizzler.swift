@@ -45,7 +45,7 @@ extension Lumos {
         let contrastingEntry = SwizzleEntry(originalClass: swizzledClass, originalSelector: swizzledSelector, originalMethodType: swizzledMethodType, swizzledClass: originalClass, swizzledSelector: originalSelector, swizzledMethodType: originalMethodType)
         
         if Lumos.swizzles.contains(contrastingEntry) {
-            guard let index = Lumos.swizzles.index(of: contrastingEntry) else { return }
+            guard let index = Lumos.swizzles.firstIndex(of: contrastingEntry) else { return }
             Lumos.swizzles.remove(at: index)
         } else {
             Lumos.swizzles.append(entry)

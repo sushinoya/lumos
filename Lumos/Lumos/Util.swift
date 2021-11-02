@@ -35,7 +35,7 @@ public extension String {
     }
     
     // Source: https://github.com/apple/swift/blob/master/stdlib/public/core/Pointer.swift#L85-L92
-    public func toPointer() -> UnsafePointer<Int8> {
+    func toPointer() -> UnsafePointer<Int8> {
         let utf8 = Array(self.utf8CString)
         return _convertConstArrayToPointerArgument(utf8).1
     }
