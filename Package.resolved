@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Aspects",
+        "repositoryURL": "https://github.com/djpearce/Aspects",
+        "state": {
+          "branch": "master",
+          "revision": "771b2f3da3b1a201f110b141854ca45070036ccc",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
