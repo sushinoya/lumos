@@ -88,7 +88,7 @@ extension LMMethod {
         hook(option: .positionInstead, errorMessage: LMMethod.errorMessage(.cannotReplace), block: block)
     }
     
-    private func hook(option: AspectOptions, errorMessage: String, block: @escaping () -> Void) {
+    public func hook(option: AspectOptions, errorMessage: String, block: @escaping () -> Void) {
         guard Lumos.for(self.class).getClassHierarchy().last == NSObject.self else {
             print(LMMethod.errorMessage(.notNSObjectSubclass))
             return
